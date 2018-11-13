@@ -1,0 +1,49 @@
+/*
+   John Wild
+
+   Sending an integer as a String to Processing
+   An integer must be a number between 2147483647 and -2147483648
+   Processing recieve code below
+*/
+
+void setup() 
+{
+Serial.begin(9600);
+}
+
+void loop()
+{
+Serial.println("-2147483648"); // a number between 2147483647 and -2147483648
+delay(200);
+}
+
+/*
+//John Wild
+// Recieved an integer as a String from Ardiono
+// Converts from String to int
+// An integer must be a number between 2147483647 and -2147483648
+
+import processing.serial.*;
+
+Serial myPort;  
+String myString;     // String received from the serial port
+int myNumber;        // Variable to hold the number when converted from String
+
+void setup()
+{
+  String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
+  myPort = new Serial(this, portName, 9600);
+}
+
+void draw() {
+}
+
+void serialEvent( Serial myPort) {
+  myString = myPort.readStringUntil('\n');
+  if (myString != null) { //make sure our data isn't empty before continuing
+    myString = trim(myString); //trim whitespace and formatting characters (like carriage return)
+    myNumber = Integer.parseInt(myString); // Convert from String to int
+      println(myNumber);
+  }
+}
+ */
