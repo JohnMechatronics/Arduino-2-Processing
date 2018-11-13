@@ -1,0 +1,53 @@
+/*
+   John Wild
+
+   Sending data as a single ASCII charecter to Processing
+   Can send any ASCII charecter. See Ascii table
+   Processing recieve code below
+*/
+
+
+void setup()
+{
+  Serial.begin(9600);
+}
+byte myByte = 'z'; // Can send any any ASCII charecter
+
+void loop()
+{
+  Serial.write(myByte);
+}
+
+/*
+  
+ // John Wild
+ // 
+ // Recieving a char from Arduino
+ // Can recieve a single ASCII carecter
+ 
+
+import processing.serial.*;
+
+Serial myPort;
+void setup()
+{
+  String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
+  myPort = new Serial(this, portName, 9600);
+   
+}
+void draw()
+{
+  if(myPort.available()>0)
+  {
+    int val = myPort.read();
+    char myChar = char(val); //conver from DEC to ASCII
+    println(myChar);
+  delay(5);
+  }
+  else
+  {
+  println("no data");
+  }
+}
+
+*/
