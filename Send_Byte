@@ -1,0 +1,49 @@
+/*
+ * John Wild
+ * 
+ * Sending data as a byte to Processing
+ * Because bytes are only 8 bits the can only contain a value from 0-255
+ * Processing recieve code below
+ *
+ */
+
+
+void setup()
+{
+  Serial.begin(9600);
+}
+byte myByte=255; // Can send data between 0-255
+void loop()
+{
+   Serial.write(myByte);
+ }   
+
+ /*
+ 
+ // John Wild
+ //
+ // Recieving data as a byte from Arduino
+ // Because bytes are only 8 bits the can only contain a value from 0-255
+
+import processing.serial.*;
+
+Serial myPort;
+void setup()
+{
+  String portName = Serial.list()[0]; //change the 0 to match your port number. i.e. 0,1,2 etc. 
+  myPort = new Serial(this, portName, 9600);
+   
+}
+void draw()
+{
+  if(myPort.available()>0)
+  {
+  println(myPort.read());
+  delay(5);
+  }
+  else
+  {
+  println("no data");
+  }
+}
+  */
